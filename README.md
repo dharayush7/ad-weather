@@ -1,70 +1,160 @@
-# Getting Started with Create React App
+# AD Weather Forecast
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive weather dashboard providing real-time weather and air quality data for any city or your current location. Built with React, it features intuitive search, detailed weather metrics, and air quality indices, all powered by the WeatherAPI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Features](#features)
+5. [Technologies Used](#technologies-used)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Contact](#contact)
+9. [Environment Variables](#environment-variables)
+10. [Tests](#tests)
+11. [Known Issues / TODOs](#known-issues--todos)
+12. [Changelog](#changelog)
+13. [Screenshots / Demos](#screenshots--demos)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Description
 
-### `npm test`
+**AD Weather Forecast** is a web application that allows users to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Instantly view current weather and air quality for their location or any city worldwide.
+- See detailed metrics including temperature, humidity, wind, UV index, and pollutant levels.
+- Enjoy a clean, user-friendly interface optimized for both desktop and mobile.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/yourusername/ad-weather.git
+   cd ad-weather
+   ```
 
-### `npm run eject`
+2. **Install dependencies:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
+   The app will be available at [http://localhost:3000](http://localhost:3000).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+- **Search for a city:**  
+  Enter a city name in the search bar and click the search icon to view weather data.
+- **Use your location:**  
+  On first load, the app requests your location to show local weather.
+- **View metrics:**  
+  The dashboard displays temperature, feels-like, condition, air quality indices (CO, NO₂, O₃, SO₂, PM2.5, PM10, US-EPA, DEFRA), wind, humidity, UV, and more.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Example:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+// To run tests
+npm test
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Features
 
-### Analyzing the Bundle Size
+- 🌍 **Location-based weather** (auto-detects user location)
+- 🔍 **City search** for global weather data
+- 🌡️ **Detailed weather metrics** (temperature, humidity, wind, UV, etc.)
+- 🏭 **Air quality indices** (CO, NO₂, O₃, SO₂, PM2.5, PM10, US-EPA, DEFRA)
+- 📱 **Responsive design** for all devices
+- ⚡ **Real-time updates** on search or location change
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **React** (18+)
+- **Create React App**
+- **WeatherAPI** (for weather and air quality data)
+- **Jest** & **React Testing Library** (for testing)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+Contributions are welcome! Please follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a Pull Request.
 
-### `npm run build` fails to minify
+Please ensure your code follows the existing style and includes relevant tests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## License
+
+This project is licensed under the MIT License.  
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contact
+
+For questions, suggestions, or support, please open an issue or contact [contact@ayushdhar.com].
+
+---
+
+## Environment Variables
+
+- **API Key:**  
+  The app currently uses a demo WeatherAPI key hardcoded in `src/api/index.js`.  
+  For production, replace it with your own key and consider using a `.env` file:
+  ```
+  REACT_APP_WEATHER_API_KEY=your_api_key_here
+  ```
+  Update the API call in `src/api/index.js` to use `process.env.REACT_APP_WEATHER_API_KEY`.
+
+---
+
+## Tests
+
+To run tests:
+
+```bash
+npm test
+```
+
+Uses Jest and React Testing Library.
+
+---
+
+## Known Issues / TODOs
+
+- [ ] Move API key to environment variable for security.
+- [ ] Add error handling for failed API requests.
+- [ ] Improve accessibility and add dark mode.
+- [ ] Add forecast (multi-day) view.
+
+---
+
+## Changelog
+
+- **v0.1.0** – Initial release: real-time weather, air quality, and location-based search.
+
+---
